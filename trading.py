@@ -4,6 +4,7 @@ import threading
 import time
 
 timer = 0
+
 #returns price of 1 BTC
 def fetch_price():
     estimation = client.get_estimated_price("BTC-USD", "ask", "1")
