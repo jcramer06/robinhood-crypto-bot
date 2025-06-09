@@ -2,8 +2,8 @@ from robinhood_api import CryptoAPITrading
 import uuid
 import threading
 import time
-import threading
 timer = 0
+
 #returns price of 1 BTC
 def fetch_price():
     estimation = client.get_estimated_price("BTC-USD", "ask", "1")
