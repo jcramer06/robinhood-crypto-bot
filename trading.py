@@ -2,7 +2,7 @@ from robinhood_api import CryptoAPITrading
 import uuid
 import threading
 import time
-import threading
+
 timer = 0
 #returns price of 1 BTC
 def fetch_price():
@@ -19,10 +19,6 @@ def cost_over_time():
     ylist.append(y)
     xlist.append(timer)
     timer += 1
-    if len(xlist) > 300:
-        xlist.pop(0)
-        ylist.pop(0)
-        print(len(xlist))
 
 
 
@@ -32,3 +28,4 @@ buying_power = float(account["buying_power"])
 print(buying_power)
 
 cost_over_time()
+
