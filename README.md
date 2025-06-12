@@ -9,6 +9,7 @@ Project plans:
  	• Use various regression models to form short and long-term 'predictions'
   	• Navigate risk and not lose all my money
    	• Experiment with other ML models as fit
+    	• Add an evolutionary neural network that acts on reward of percentage change
    	
 	
 	
