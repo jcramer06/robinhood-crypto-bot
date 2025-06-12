@@ -8,10 +8,6 @@ from nacl.signing import SigningKey
 from api_keys import private, public, api
 import time
 
-#timestamp function
-def get_timeStamp():
-    return int(time.time())
-
 #keys
 API_KEY = api
 BASE64_PRIVATE_KEY = private
