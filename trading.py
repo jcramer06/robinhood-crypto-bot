@@ -14,7 +14,10 @@ def acct():
     return client.get_account()
 
 def holdings():
-    return float(client.get_holdings()["results"][0]["quantity_available_for_trading"])
+    try:
+        return float(client.get_holdings()["results"][0]["quantity_available_for_trading"])
+    except:
+        return 0
 
 
 

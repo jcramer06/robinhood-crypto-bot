@@ -34,5 +34,5 @@ cost_over_time()
 #       xlist.pop(0)
 #    while len(ylist) > 500:
 #      ylist.pop(0)
-#        print(len(xlist))
+#        print(len(xlist))s
 #    print(result)
