@@ -9,8 +9,12 @@ Project plans:
  	• Use various regression models to form short and long-term 'predictions'
   	• Navigate risk and not lose all my money
    	• Experiment with other ML models as fit
-    	• Add an evolutionary neural network that acts on reward of percentage change
-   	
-	
+    	• Add a neural network for trading
+•PLANS 6/12/25
+	• Add more standard analysis tools to be used as neural network input
+ 	• Greatly increase accuracy, currently stuck in low-reward loop
+	• Develop a more robust sentiment analysis system
+ 	• Possibly implement double deep q learning
+  	• Experiment with more variance as a means to counteract market volatility
 	
 	
