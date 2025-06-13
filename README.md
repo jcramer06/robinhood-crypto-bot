@@ -2,7 +2,7 @@
 AI and machine learning powered cryptocurrency trading bot utilizing the Robinhood crypto API.
 
 Project plans:
-	• Trade Bitcoin with some success
+	• Trade crypto with some success
  	• Use sentiment analysis and web scrape to produce some coefficient that will be used in managing trading risk.
  	• Implement various trading strategies and analyze them
 	• Design elegant graphs, charts, and plots of trading data and results
@@ -16,5 +16,7 @@ Project plans:
 	• Develop a more robust sentiment analysis system
  	• Possibly implement double deep q learning
   	• Experiment with more variance as a means to counteract market volatility
+   	• add incentives for holding over time without training model to only hold
+    	• prevent model from choosing same action continuously with exponentially large negative reward
 	
 	
