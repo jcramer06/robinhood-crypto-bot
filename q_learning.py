@@ -34,7 +34,7 @@ class Order:
 
 def update_normalized_state():
     state = numpy.array([sum(trading.ylist) / len(trading.ylist), scraper.sentiment(), trading.fetch_price(), (
-    models.PolyRegression(trading.xlist, trading.ylist)[0]), trading.buying_power])
+    models.PolyRegression(trading.xlist, trading.ylist)[0]), trading.get_buying_power()])
     return (state - np.min(state)) / (np.max(state) - np.min(state))
 
 # 1. Define the Q-network
@@ -71,7 +71,7 @@ class ReplayMemory:
 # 3. Agent class to interact and learn
 class DQNAgent:
     def __init__(self, state_dim, action_dim, lr=1e-4, gamma=0.99,
-                 epsilon_start=1.0, epsilon_final=0.01, epsilon_decay=50):
+                 epsilon_start=1.0, epsilon_final=0.05, epsilon_decay=50):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.policy_net = DQN(state_dim, action_dim).to(self.device)
         self.target_net = DQN(state_dim, action_dim).to(self.device)
@@ -149,7 +149,7 @@ holdings_at_entry = 0
 while True:
     try:
         false_bought = 0
-        cash = trading.buying_power
+        cash = trading.get_buying_power()
         cash_diff = cash
         crypto = trading.holdings()
         net_worth = cash + crypto
@@ -233,13 +233,13 @@ while True:
         else:
             unrealized_profit = 0
         # --- Step 5: Log performance ---
-        time.sleep(1)
-        cash = trading.buying_power
+        time.sleep(0.1)
+        cash = trading.get_buying_power()
         cash_diff -= cash
         crypto = trading.holdings()
         cryptoHolding = crypto * trading.fetch_price()
         new_net_worth = cash + cryptoHolding
-        net_worth_change = (new_net_worth - net_worth)
+        net_worth_change = (new_net_worth - net_worth)/net_worth
         reward = net_worth_change*10 + unrealized_profit*10 - cash_diff*100 - false_bought
         net_worth = new_net_worth
         info['net_worth'] = net_worth

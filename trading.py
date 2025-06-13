@@ -31,12 +31,13 @@ def cost_over_time():
     xlist.append(timer)
     timer += 1
 
+def get_buying_power():
+    return float(account["buying_power"])
+
 
 
 client = CryptoAPITrading()
 account = client.get_account()
-buying_power = float(account["buying_power"])
-print(buying_power)
 
 cost_over_time()
 acct()
